@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Happy Birthday, My Love! 🦫 💕</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,800;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Ambient Particle Canvas -->
+  <canvas id="ambientCanvas"></canvas>
+
+  <!-- Loading & Countdown Overlay -->
+  <div id="loadingOverlay" class="loading-overlay">
+    <div class="loader-card glass-panel">
+      <div class="loader-capy-wrapper">
+        <div class="mini-capybara">
+          <div class="m-capy-ear left"></div>
+          <div class="m-capy-ear right"></div>
+          <div class="m-capy-head">
+            <div class="m-capy-eye left"></div>
+            <div class="m-capy-eye right"></div>
+            <div class="m-capy-snout"></div>
+          </div>
+          <div class="m-capy-body"></div>
+          <div class="m-capy-orange">🍊</div>
+        </div>
+      </div>
+      <h2 class="loader-title">Preparing Something Magical...</h2>
+      <div class="typing-container">
+        <span id="loaderTypingText" class="typing-text"></span><span class="cursor">|</span>
+      </div>
+      <div class="progress-bar-container">
+        <div id="loaderBar" class="progress-bar-fill"></div>
+      </div>
+      <button id="enterSiteBtn" class="btn btn-primary enter-btn hidden">Unwrap Your Gift ✨</button>
+    </div>
+  </div>
+
+  <!-- Sticky Glassmorphism Header & Navigation -->
+  <header id="mainHeader" class="main-header">
+    <div class="header-content glass-pill">
+      <div class="brand">
+        <span class="brand-icon">🦫</span>
+        <span class="brand-text">Sept 19</span>
+      </div>
+      <nav class="nav-menu">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#story" class="nav-link">Our Story</a>
+        <a href="#gallery" class="nav-link">Gallery</a>
+        <a href="#gifts" class="nav-link">Gifts</a>
+        <a href="#letter" class="nav-link">Letter</a>
+        <a href="#cake" class="nav-link">Cake</a>
+        <a href="#surprises" class="nav-link">Surprises</a>
+      </nav>
+      <button id="musicToggleBtn" class="music-pill-btn" aria-label="Toggle Music">
+        <div class="eq-bars">
+          <span class="bar bar1"></span>
+          <span class="bar bar2"></span>
+          <span class="bar bar3"></span>
+        </div>
+        <span class="music-btn-text">Always</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Floating Audio Engine Widget -->
+  <div id="floatingMusicWidget" class="floating-music-widget glass-panel">
+    <div class="vinyl-wrapper">
+      <div id="vinylDisk" class="vinyl-disk">
+        <div class="vinyl-center"></div>
+      </div>
+    </div>
+    <div class="music-info">
+      <div class="song-title">Always</div>
+      <div class="artist-name">Daniel Caesar</div>
+      <div class="audio-controls">
+        <button id="playPauseBtn" class="audio-btn">▶</button>
+        <div class="scrubber-container">
+          <input type="range" id="audioScrubber" min="0" max="100" value="0" class="audio-slider">
+        </div>
+        <input type="range" id="volumeControl" min="0" max="1" step="0.05" value="0.8" class="volume-slider">
+      </div>
+    </div>
+    <audio id="bgMusic" loop src="assets/music/always.mp3" preload="auto"></audio>
+  </div>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section id="home" class="hero-section">
+      <div class="hero-content">
+        <div class="birthday-badge glass-pill">✨ Happy 22nd Birthday ✨</div>
+        <h1 class="hero-title">Happy Birthday,<br><span class="gradient-text">My Beautiful Girl</span></h1>
+        <p class="hero-subtitle">September 19th, 2004 — The day the world became softer, brighter, and infinitely more lovely.</p>
+        
+        <!-- 100% Code-Built Interactive Capybara Mascot -->
+        <div class="capybara-hero-container">
+          <div class="capybara-stage">
+            <div id="mainCapybara" class="capybara-character idle">
+              <div class="capy-shadow"></div>
+              <div class="capy-body">
+                <div class="capy-arm left"></div>
+                <div class="capy-arm right"></div>
+                <div class="capy-leg left"></div>
+                <div class="capy-leg right"></div>
+                <div class="capy-belly"></div>
+                
+                <!-- Held Items -->
+                <div id="capyHeldItem" class="capy-held-item">
+                  <span class="item-heart">💖</span>
+                  <span class="item-flower hidden">🌸</span>
+                  <span class="item-cake hidden">🎂</span>
+                  <span class="item-ring hidden">💍</span>
+                </div>
+
+                <div class="capy-head">
+                  <div class="capy-ear left"><div class="ear-inner"></div></div>
+                  <div class="capy-ear right"><div class="ear-inner"></div></div>
+                  <div class="capy-face">
+                    <div class="capy-eye left"><div class="pupil"><div class="reflection"></div></div></div>
+                    <div class="capy-eye right"><div class="pupil"><div class="reflection"></div></div></div>
+                    <div class="capy-snout">
+                      <div class="capy-nose"></div>
+                      <div class="capy-mouth"></div>
+                    </div>
+                    <div class="capy-blush left"></div>
+                    <div class="capy-blush right"></div>
+                    <div class="capy-crown">👑</div>
+                    <div class="capy-orange">🍊</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Capybara Interactive Dialog -->
+            <div id="capyBubble" class="speech-bubble glass-panel">
+              <p id="capyBubbleText">Tap me! I love birthday hugs! 🦫💕</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <a href="#story" class="btn btn-primary">Explore Our Journey ✨</a>
+          <a href="#cake" class="btn btn-secondary">Blow The Candles 🎂</a>
+        </div>
+
+        <!-- Countdown Timer -->
+        <div class="countdown-wrapper glass-panel">
+          <h3 class="countdown-label">Celebrating September 19th</h3>
+          <div class="countdown-grid">
+            <div class="count-box"><span id="days">00</span><label>Days</label></div>
+            <div class="count-box"><span id="hours">00</span><label>Hours</label></div>
+            <div class="count-box"><span id="minutes">00</span><label>Mins</label></div>
+            <div class="count-box"><span id="seconds">00</span><label>Secs</label></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OUR STORY SECTION -->
+    <section id="story" class="section-padding">
+      <div class="section-header">
+        <span class="section-tag">Our Chapter</span>
+        <h2 class="section-title">How My World Became You</h2>
+        <p class="section-desc">Every moment with you feels like a page from a fairytale.</p>
+      </div>
+
+      <div class="timeline-container">
+        <div class="timeline-line"></div>
+        
+        <div class="timeline-item left">
+          <div class="timeline-content glass-panel">
+            <div class="timeline-date">The Day We Met</div>
+            <h3>The Spark</h3>
+            <p>The universe shifted the moment you walked into my life. Your smile lit up everything, and I knew instantly you were special.</p>
+            <div class="timeline-icon">✨</div>
+          </div>
+        </div>
+
+        <div class="timeline-item right">
+          <div class="timeline-content glass-panel">
+            <div class="timeline-date">Our First Date</div>
+            <h3>Butterflies & Laughter</h3>
+            <p>Hours felt like minutes as we talked about everything and nothing. I realized I never wanted our conversations to end.</p>
+            <div class="timeline-icon">☕</div>
+          </div>
+        </div>
+
+        <div class="timeline-item left">
+          <div class="timeline-content glass-panel">
+            <div class="timeline-date">Endless Memories</div>
+            <h3>Building Our World</h3>
+            <p>From late-night calls to simple quiet moments, every single second spent with you is my absolute favorite place to be.</p>
+            <div class="timeline-icon">🌙</div>
+          </div>
+        </div>
+
+        <div class="timeline-item right">
+          <div class="timeline-content glass-panel">
+            <div class="timeline-date">September 19th</div>
+            <h3>Your Special Day</h3>
+            <p>Today is all about celebrating the most incredible, beautiful, gentle soul in existence. Happy Birthday, my love!</p>
+            <div class="timeline-icon">🎁</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section id="gallery" class="section-padding">
+      <div class="section-header">
+        <span class="section-tag">Captured Magic</span>
+        <h2 class="section-title">Our Favorite Memories</h2>
+        <p class="section-desc">A collection of moments that prove heaven exists on earth.</p>
+      </div>
+
+      <!-- Ratio-Aware Masonry Grid -->
+      <div class="masonry-gallery" id="masonryGallery">
+        <!-- 3:4 Aspect Ratio (Photos 1-5) -->
+        <div class="gallery-card ratio-3-4" data-src="assets/photos/1.jpg" data-caption="Your radiance lights up every room.">
+          <img src="assets/photos/1.jpg" alt="Memory 1" loading="lazy">
+          <div class="card-overlay"><span class="overlay-text">View Photo 💖</span></div>
+        </div>
+        <div class="gallery-card ratio-3-4" data-src="assets/photos/2.jpg" data-caption="Pure joy wrapped in your sweet smile.">
+          <img src="assets/photos/2.jpg" alt="Memory 2" loading="lazy">
+          <div class="card-overlay"><span class="overlay-text">View Photo ✨</span></div>
+        </div>
+        <div class="gallery-card ratio-3-4" data-src="assets/photos/3.jpg" data-caption="The cute princess of my heart.">
+          <img src="assets/photos/3.jpg" alt="Memory 3" loading="lazy">
+          <div class="card-overlay"><span class="overlay-text">View Photo 🌸</span></div>
+        </div>
+        <div class="gallery-card ratio-3-4" data-src="assets/photos/4.jpg" data-caption="Every view is beautiful with you in it.">
+          <img src="assets/photos/4.jpg" alt="Memory 4" loading="lazy">
+          <div class="card-overlay"><span class="overlay-text">View Photo 🌷</span></div>
+        </div>
+        <div class="gallery-card ratio-3-4" data-src="assets/photos/5.jpg" data-caption="My favorite person in the entire universe.">
+          <img src="assets/photos/5.jpg" alt="Memory 5" loading="lazy">
+          <div class="card-overlay"><span class="overlay-text">View Photo 💕</span></div>
+        </div>
+
+        <!-- 9:16 Aspect Ratio (Photos 6-7) -->
+        <div class="gallery-card ratio-9-16" data-src="assets/photos/6.jpg" data-caption="Unfiltered perfection & sweet energy.">
+          <img src="assets/photos/6.jpg" alt="Memory 6" loading="lazy">
+          <div class="card-overlay"><span class="overlay-text">View Photo 👑</span></div>
+        </div>
+        <div class="gallery-card ratio-9-16" data-src="assets/photos/7.jpg" data-caption="Forever my favorite aesthetic.">
+          <img src="assets/photos/7.jpg" alt="Memory 7" loading="lazy">
+          <div class="card-overlay"><span class="overlay-text">View Photo 🎀</span></div>
+        </div>
+
+        <!-- 4:3 Aspect Ratio (Photos 8-10) -->
+        <div class="gallery-card ratio-4-3" data-src="assets/photos/8.jpg" data-caption="Golden hour moments with you.">
+          <img src="assets/photos/8.jpg" alt="Memory 8" loading="lazy">
+          <div class="card-overlay"><span class="overlay-text">View Photo 🌅</span></div>
+        </div>
+        <div class="gallery-card ratio-4-3" data-src="assets/photos/9.jpg" data-caption="Laughter, warmth, and pure love.">
+          <img src="assets/photos/9.jpg" alt="Memory 9" loading="lazy">
+          <div class="card-overlay"><span class="overlay-text">View Photo 💌</span></div>
+        </div>
+        <div class="gallery-card ratio-4-3" data-src="assets/photos/10.jpg" data-caption="A timeless memory we hold close.">
+          <img src="assets/photos/10.jpg" alt="Memory 10" loading="lazy">
+          <div class="card-overlay"><span class="overlay-text">View Photo 💍</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIGHTBOX MODAL -->
+    <div id="lightboxModal" class="lightbox-modal">
+      <div class="lightbox-overlay"></div>
+      <div class="lightbox-content glass-panel">
+        <button id="closeLightbox" class="close-btn">&times;</button>
+        <div class="lightbox-img-wrapper">
+          <img id="lightboxImg" src="" alt="Enlarged view">
+        </div>
+        <p id="lightboxCaption" class="lightbox-caption"></p>
+      </div>
+    </div>
+
+    <!-- GIFT BOX SECTION -->
+    <section id="gifts" class="section-padding">
+      <div class="section-header">
+        <span class="section-tag">Interactive Delights</span>
+        <h2 class="section-title">Your Birthday Gift Treasury</h2>
+        <p class="section-desc">Tap each box to unlock custom love tokens, coupons, and secret surprises!</p>
+      </div>
+
+      <div class="gifts-grid">
+        <!-- Gift Item 1 -->
+        <div class="gift-card glass-panel" data-gift="coupon">
+          <div class="gift-icon">🎟️</div>
+          <h3>Love Coupons</h3>
+          <p>Redeemable anytime by you!</p>
+          <button class="btn btn-sm">Unwrap Gift</button>
+        </div>
+
+        <!-- Gift Item 2 -->
+        <div class="gift-card glass-panel" data-gift="flowers">
+          <div class="gift-icon">💐</div>
+          <h3>Virtual Bouquet</h3>
+          <p>Flowers that will never fade.</p>
+          <button class="btn btn-sm">Unwrap Gift</button>
+        </div>
+
+        <!-- Gift Item 3 -->
+        <div class="gift-card glass-panel" data-gift="chocolates">
+          <div class="gift-icon">🍫</div>
+          <h3>Handcrafted Chocolates</h3>
+          <p>As sweet as your smile.</p>
+          <button class="btn btn-sm">Unwrap Gift</button>
+        </div>
+
+        <!-- Gift Item 4 -->
+        <div class="gift-card glass-panel" data-gift="jar">
+          <div class="gift-icon">🏺</div>
+          <h3>Love Jar</h3>
+          <p>100 Reasons why I adore you.</p>
+          <button class="btn btn-sm">Unwrap Gift</button>
+        </div>
+
+        <!-- Gift Item 5 -->
+        <div class="gift-card glass-panel" data-gift="bottle">
+          <div class="gift-icon">🍾</div>
+          <h3>Wish Bottle</h3>
+          <p>A message floating across oceans.</p>
+          <button class="btn btn-sm">Unwrap Gift</button>
+        </div>
+
+        <!-- Gift Item 6 -->
+        <div class="gift-card glass-panel" data-gift="ring">
+          <div class="gift-icon">💍</div>
+          <h3>Promise Card</h3>
+          <p>A solemn promise for tomorrow.</p>
+          <button class="btn btn-sm">Unwrap Gift</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- GIFT MODAL POPUP -->
+    <div id="giftModal" class="gift-modal">
+      <div class="gift-modal-overlay"></div>
+      <div class="gift-modal-card glass-panel">
+        <button id="closeGiftModal" class="close-btn">&times;</button>
+        <div id="giftModalBody" class="gift-modal-body">
+          <!-- Dynamic JS content injected here -->
+        </div>
+      </div>
+    </div>
+
+    <!-- BIRTHDAY LETTER SECTION -->
+    <section id="letter" class="section-padding">
+      <div class="section-header">
+        <span class="section-tag">From My Heart</span>
+        <h2 class="section-title">A Letter For My Soulmate</h2>
+        <p class="section-desc">Tap the wax seal to open your birthday letter.</p>
+      </div>
+
+      <div class="envelope-wrapper">
+        <div id="envelope" class="envelope">
+          <div class="envelope-flap"></div>
+          <div id="waxSeal" class="wax-seal">
+            <span class="seal-emblem">🦫</span>
+          </div>
+          <div class="envelope-pocket"></div>
+          
+          <div id="letterPaper" class="letter-paper">
+            <div class="letter-header">
+              <span class="letter-date">September 19th, 2026</span>
+              <h3 class="letter-salutation">My Dearest Birthday Girl,</h3>
+            </div>
+            <div class="letter-body">
+              <p>Happy Birthday, my darling! On this extra special day, I want you to know how deeply loved, valued, and cherished you are. Ever since you stepped into my life, everything has felt warmer and brighter.</p>
+              <p>You possess a heart so gentle and a smile so beautiful that it effortlessly softens my hardest days. Watching you laugh, seeing your cute reactions, and sharing quiet moments with you are my absolute favorite privileges.</p>
+              <p>As you celebrate turning 22 today, my wish for you is boundless joy, peace, success, and endless laughter. I promise to stand by you, hold your hand, celebrate your wins, and love you more with every passing sunrise.</p>
+              <p class="letter-closing">Forever & Always Yours,<br><span class="signature">Your Biggest Admirer ❤️</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BIRTHDAY CAKE SECTION -->
+    <section id="cake" class="section-padding">
+      <div class="section-header">
+        <span class="section-tag">Make A Wish</span>
+        <h2 class="section-title">Your 3D Birthday Cake</h2>
+        <p class="section-desc">Click or tap the candles to blow them out and reveal your birthday wish!</p>
+      </div>
+
+      <div class="cake-stage">
+        <div class="cake-3d-container">
+          <div id="birthdayCake" class="birthday-cake">
+            <!-- Plate -->
+            <div class="cake-plate"></div>
+            <!-- Bottom Layer -->
+            <div class="cake-layer layer-bottom">
+              <div class="frosting-drips"></div>
+            </div>
+            <!-- Top Layer -->
+            <div class="cake-layer layer-top">
+              <div class="frosting-drips"></div>
+              <div class="strawberries">
+                <span>🍓</span><span>🍓</span><span>🍓</span><span>🍓</span>
+              </div>
+            </div>
+            <!-- Candles -->
+            <div class="candles-container">
+              <div class="candle c1">
+                <div class="flame"></div>
+                <div class="smoke"></div>
+              </div>
+              <div class="candle c2">
+                <div class="flame"></div>
+                <div class="smoke"></div>
+              </div>
+              <div class="candle c3">
+                <div class="flame"></div>
+                <div class="smoke"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cake-controls">
+          <button id="blowCandlesBtn" class="btn btn-primary">Blow Out The Candles 💨</button>
+          <div id="wishMessage" class="wish-message glass-panel hidden">
+            ✨ May all your sweetest dreams come true today and always! ✨
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SURPRISES & REACTION SECTION -->
+    <section id="surprises" class="section-padding">
+      <div class="section-header">
+        <span class="section-tag">Little Joys</span>
+        <h2 class="section-title">Random Love Generator</h2>
+        <p class="section-desc">Click the button below to generate a cute surprise note!</p>
+      </div>
+
+      <div class="surprise-box-container">
+        <div id="complimentCard" class="compliment-card glass-panel">
+          <div class="compliment-icon">💖</div>
+          <p id="complimentText" class="compliment-text">Click the button below to receive love!</p>
+        </div>
+        <button id="generateSurpriseBtn" class="btn btn-secondary">Give Me A Compliment 🎁</button>
+      </div>
+    </section>
+
+    <!-- FINAL SECTION -->
+    <section class="final-sunset-section">
+      <div class="sunset-background">
+        <div class="sun"></div>
+        <div class="mountains"></div>
+        <div class="stars-overlay"></div>
+      </div>
+
+      <div class="final-content">
+        <div class="final-capybara-holder">
+          <div class="mini-capy-holding-flowers">
+            <span class="capy-emoji">🦫💐</span>
+          </div>
+        </div>
+        <h2 class="final-title">I Love You Beyond Words</h2>
+        <p class="final-subtitle">Thank you for being my dream come true. Happy Birthday, my love!</p>
+        <div class="final-heart-burst">💖</div>
+        <div class="copyright-text">Made with infinite love for September 19th, 2004</div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
